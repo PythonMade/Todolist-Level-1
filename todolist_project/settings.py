@@ -25,7 +25,7 @@ SECRET_KEY = 'gn1(bg+)00q0wzd$v8vh_q+0(k%bpzm2jb*_6rp*u2u5(36ey#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pythonmade-todolist.herokuapp.com', 'localhost']
 
 
 # Application definition
