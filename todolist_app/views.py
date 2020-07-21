@@ -1,38 +1,14 @@
 from django.shortcuts import render
-
-tasks = [
-    {
-        'title': 'Task 1',
-        'is_achived': False,
-        'date_created': 'July 1, 2020',
-    },
-    {
-        'title': 'Task 2',
-        'is_achived': False,
-        'date_created': 'July 1, 2020',
-    },
-    {
-        'title': 'Task 3',
-        'is_achived': False,
-        'date_created': 'July 1, 2020',
-    },
-    {
-        'title': 'Task 4',
-        'is_achived': False,
-        'date_created': 'July 1, 2020',
-    },
-    {
-        'title': 'Task 5',
-        'is_achived': False,
-        'date_created': 'July 1, 2020',
-    },
-]
+from .models import Task
 
 def home(request):
     context = {
-        'tasks': tasks,
+        'tasks': Task.objects.filter(is_archived=False)
     }
     return render(request, 'todolist_app/home.html', context)
 
 def archive(request):
-    return render(request, 'todolist_app/archive.html')
+    context = {
+        'tasks': Task.objects.filter(is_archived=True)
+    }
+    return render(request, 'todolist_app/archive.html', context)
