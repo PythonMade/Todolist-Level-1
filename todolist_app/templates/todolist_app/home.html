@@ -1,7 +1,7 @@
 {% extends 'todolist_app/base.html' %}
 
 {% block content %}
-<section id="main-todolist-page" class="py-5 bg-light">
+<section id="home-page" class="py-5 bg-light">
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
@@ -15,12 +15,10 @@
                     </div>
                 </form>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Morbi leo risus</li>
-                    <li class="list-group-item">Porta ac consectetur ac</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                  </ul>
+                    {% for task in tasks %}
+                        <li class="list-group-item">{{ task.title }}</li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </div>

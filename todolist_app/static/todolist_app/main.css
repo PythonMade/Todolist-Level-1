@@ -1,6 +1,12 @@
 html {
-    
+    height: 100%;
 }
 body {
-
+    height: 100%;
+}
+#home-page {
+    height: 100%;
+}
+#archive-page {
+    height: 100%;
 }
