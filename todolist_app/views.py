@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from .models import Task
 
 def home(request):
@@ -19,6 +20,13 @@ def archive(request):
     return render(request, 'todolist_app/archive.html', context)
 
 def deleteTask(request, task_id):
-    task = Task.objects.filter(id=task_id)
+    task = Task.objects.filter(id=task_id).first()
     task.delete()
+    return redirect('todolist-home')
+
+def archiveTask(request, task_id):
+    task = Task.objects.filter(id=task_id).first()
+    task.is_archived = True
+    task.save()
+    messages.success(request, f'A task has been archived')
     return redirect('todolist-home')

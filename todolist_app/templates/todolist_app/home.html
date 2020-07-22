@@ -3,14 +3,14 @@
 
 {% block content %}
 <section id="home-page" class="py-5 bg-light">
-    <div class="container">
+    <div class="container py-5">
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <h1 class="mb-3">Tasks</h1>
                 <form method="post" action="">
                     {% csrf_token %}
                     <div class="input-group mb-3">
-                        <input type="text" name="title" class="form-control" placeholder="Enter a task">
+                        <input type="text" name="title" class="form-control" placeholder="Enter a task" autofocus=True>
                         <div class="input-group-append">
                             <button class="btn btn-outline-primary" type="submit">Add New Task</button>
                         </div>
@@ -34,12 +34,20 @@
                         <li class="list-group-item">
                             <div class="d-flex justify-content-between align-content-middle">
                                 <p class="m-0">{{ task.title }}</p>
-                                <form method="post" action="/deleteTask/{{ task.id }}">
-                                    {% csrf_token %}
-                                    <button class="btn btn-sm btn-white" type="submit">
-                                        <img class="img-fluid" src="{% static 'todolist_app/images/delete.png' %}" alt="">
-                                    </button>
-                                </form>
+                                <div class="d-flex">
+                                    <form method="post" action="/deleteTask/{{ task.id }}">
+                                        {% csrf_token %}
+                                        <button class="btn btn-sm btn-white" type="submit">
+                                            <img class="img-fluid" src="{% static 'todolist_app/images/delete.png' %}" alt="">
+                                        </button>
+                                    </form>
+                                    <form method="post" action="/archiveTask/{{ task.id }}">
+                                        {% csrf_token %}
+                                        <button class="btn btn-sm btn-white ml-2" type="submit">
+                                            <img width="20" src="{% static 'todolist_app/images/check.png' %}" alt="">
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
                         </li>
                     {% endfor %}

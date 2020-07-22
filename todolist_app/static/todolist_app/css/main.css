@@ -4,6 +4,13 @@ html {
 body {
     height: 100%;
 }
+.alert {
+    z-index: 9999;
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 #home-page {
     height: 100%;
 }
@@ -12,8 +19,7 @@ body {
 }
 #home-page .list-group-item button {
     width: 32px;
-    border-radius: 50%;
-    display: none;
+    /* display: none; */
 }
 #home-page .list-group-item:hover button {
     display: block;
