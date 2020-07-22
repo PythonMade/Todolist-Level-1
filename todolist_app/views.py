@@ -17,3 +17,8 @@ def archive(request):
         'tasks': Task.objects.filter(is_archived=True)
     }
     return render(request, 'todolist_app/archive.html', context)
+
+def deleteTask(request, task_id):
+    task = Task.objects.filter(id=task_id)
+    task.delete()
+    return redirect('todolist-home')

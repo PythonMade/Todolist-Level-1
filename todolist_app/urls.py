@@ -20,4 +20,5 @@ from . import views
 urlpatterns = [
     path('', views.home, name='todolist-home'),
     path('archive/', views.archive, name='todolist-archive'),
+    path('deleteTask/<int:task_id>', views.deleteTask, name='delete-task'),
 ]
