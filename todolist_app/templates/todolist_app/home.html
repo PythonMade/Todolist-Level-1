@@ -31,8 +31,7 @@
                 </ul> -->
                 <div class="list-group list-group-flush">
                     {% for task in tasks %}
-                        <!-- <a href="javascript:updateModal()" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#taskModal" data-form=""> -->
-                        <div href="#" class="list-group-item list-group-item-action">
+                        <div class="list-group-item list-group-item-action">
                             <div class="d-flex justify-content-between align-content-middle">
                                 <p class="m-0"><a href="#" onclick="giveIdToModal({{ task.id }}, '{{ task.title }}')" data-toggle="modal" data-target="#taskModal">{{ task.title }}</a></p>
                                 <div class="d-flex">
