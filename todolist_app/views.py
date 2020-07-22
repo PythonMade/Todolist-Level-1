@@ -30,3 +30,10 @@ def archiveTask(request, task_id):
     task.save()
     messages.success(request, f'A task has been archived')
     return redirect('todolist-home')
+
+def unArchiveTask(request, task_id):
+    task = Task.objects.filter(id=task_id).first()
+    task.is_archived = False
+    task.save()
+    messages.success(request, f'A task has been un-archived')
+    return redirect('todolist-archive')

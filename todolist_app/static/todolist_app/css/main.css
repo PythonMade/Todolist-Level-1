@@ -27,3 +27,13 @@ body {
 #archive-page {
     height: 100%;
 }
+#archive-page .list-group-item p {
+    line-height: 2em;
+}
+#archive-page .list-group-item button {
+    width: 32px;
+    /* display: none; */
+}
+#archive-page .list-group-item:hover button {
+    display: block;
+}

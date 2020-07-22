@@ -22,4 +22,5 @@ urlpatterns = [
     path('archive/', views.archive, name='todolist-archive'),
     path('deleteTask/<int:task_id>', views.deleteTask, name='delete-task'),
     path('archiveTask/<int:task_id>', views.archiveTask, name='archive-task'),
+    path('unArchiveTask/<int:task_id>', views.unArchiveTask, name='un-archive-task'),
 ]
