@@ -41,3 +41,9 @@ def unArchiveTask(request, task_id):
     task.save()
     messages.success(request, f'A task has been un-archived')
     return redirect('todolist-archive')
+
+def updateTask(request, task_id):
+    task = Task.objects.filter(id=task_id).first()
+    task.title = request.POST['title']
+    task.save()
+    return redirect('todolist-home')
