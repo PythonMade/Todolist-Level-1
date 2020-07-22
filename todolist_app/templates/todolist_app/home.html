@@ -37,6 +37,7 @@
                                 <div class="d-flex">
                                     <form method="post" action="/deleteTask/{{ task.id }}">
                                         {% csrf_token %}
+                                        <input type="hidden" name="last_url" value="{{ request.path }}">
                                         <button class="btn btn-sm btn-white" type="submit">
                                             <img class="img-fluid" src="{% static 'todolist_app/images/delete.png' %}" alt="">
                                         </button>

@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Task
+# from django.urls import resolve
+# from .models import Task
+from .models import *
+from .forms import *
 
 def home(request):
     if request.method == 'POST':
@@ -20,9 +23,10 @@ def archive(request):
     return render(request, 'todolist_app/archive.html', context)
 
 def deleteTask(request, task_id):
+    last_url = request.POST.get('last_url')
     task = Task.objects.filter(id=task_id).first()
     task.delete()
-    return redirect('todolist-home')
+    return redirect(last_url)
 
 def archiveTask(request, task_id):
     task = Task.objects.filter(id=task_id).first()

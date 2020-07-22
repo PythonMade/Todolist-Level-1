@@ -1,9 +1,11 @@
 from django import forms
-from .models import Task
+from django.forms import ModelForm
+# from .models import Task
+from .models import *
 
-# create a form that inherits from ModelForm
-class TaskCreateForm(forms.ModelForm):
+class TaskForm(forms.ModelForm):
 
     class Meta:
         model = Task
-        fields = ['title']
+        fields = '__all__'
+        # fields = ['title']
