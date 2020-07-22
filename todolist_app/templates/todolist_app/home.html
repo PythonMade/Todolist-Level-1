@@ -32,9 +32,9 @@
                 <div class="list-group list-group-flush">
                     {% for task in tasks %}
                         <!-- <a href="javascript:updateModal()" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#taskModal" data-form=""> -->
-                        <a href="#" class="list-group-item list-group-item-action" onclick="giveIdToModal({{ task.id }}, '{{ task.title }}')" data-toggle="modal" data-target="#taskModal">
+                        <div href="#" class="list-group-item list-group-item-action">
                             <div class="d-flex justify-content-between align-content-middle">
-                                <p class="m-0">{{ task.title }}</p>
+                                <p class="m-0"><a href="#" onclick="giveIdToModal({{ task.id }}, '{{ task.title }}')" data-toggle="modal" data-target="#taskModal">{{ task.title }}</a></p>
                                 <div class="d-flex">
                                     <form method="post" action="/deleteTask/{{ task.id }}">
                                         {% csrf_token %}
@@ -51,7 +51,7 @@
                                     </form>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     {% endfor %}
                 </div>
             </div>
