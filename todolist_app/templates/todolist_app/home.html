@@ -1,4 +1,5 @@
 {% extends 'todolist_app/base.html' %}
+{% load static %}
 
 {% block content %}
 <section id="home-page" class="py-5 bg-light">
@@ -16,10 +17,23 @@
                     </div>
                 </form>
                 <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="d-flex justify-content-between align-content-middle">
+                            <p class="m-0">Fake Task 1</p>
+                            <form method="post" action="/deleteTask/">
+                                {% csrf_token %}
+                                <button class="btn btn-sm btn-white" type="submit">
+                                    <img class="img-fluid" src="{% static 'todolist_app/images/delete.png' %}" alt="">
+                                </button>
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+                <!-- <ul class="list-group list-group-flush">
                     {% for task in tasks %}
                         <li class="list-group-item">{{ task.title }}</li>
                     {% endfor %}
-                </ul>
+                </ul> -->
             </div>
         </div>
     </div>

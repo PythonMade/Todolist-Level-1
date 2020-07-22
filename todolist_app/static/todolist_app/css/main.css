@@ -1,0 +1,23 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+}
+#home-page {
+    height: 100%;
+}
+#home-page .list-group-item p {
+    line-height: 2em;
+}
+#home-page .list-group-item button {
+    width: 32px;
+    border-radius: 50%;
+    display: none;
+}
+#home-page .list-group-item:hover button {
+    display: block;
+}
+#archive-page {
+    height: 100%;
+}
