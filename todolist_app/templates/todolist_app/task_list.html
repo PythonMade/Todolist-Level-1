@@ -6,10 +6,9 @@
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <h1 class="mb-3">Tasks</h1>
-                <form method="post" action="">
-                    {% csrf_token %}
+                <form>
                     <div class="input-group mb-3">
-                        <input type="text" name="title" class="form-control" placeholder="Enter a task">
+                        <input type="text" class="form-control" placeholder="Enter a task">
                         <div class="input-group-append">
                             <button class="btn btn-outline-primary" type="submit">Add New Task</button>
                         </div>
@@ -19,6 +18,9 @@
                     {% for task in tasks %}
                         <li class="list-group-item">{{ task.title }}</li>
                     {% endfor %}
+                    <!-- {% for object in object_list %}
+                        <li class="list-group-item">{{ object.title }}</li>
+                    {% endfor %} -->
                 </ul>
             </div>
         </div>
