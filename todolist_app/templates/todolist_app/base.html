@@ -31,7 +31,7 @@
                     <a class="nav-link" href="{% url 'todolist-home' %}">Tasks <span class="small">({{ tasks.count }})</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'todolist-archive' %}">Archive</a>
+                    <a class="nav-link" href="{% url 'todolist-archive' %}">Archive <span class="small">({{ archives.count }})</span></a>
                 </li>
             </ul>
         </div>

@@ -12,13 +12,15 @@ def home(request):
         return redirect('todolist-home')
     else:
         context = {
-            'tasks': Task.objects.filter(is_archived=False)
+            'tasks': Task.objects.filter(is_archived=False),
+            'archives': Task.objects.filter(is_archived=True),
         }
         return render(request, 'todolist_app/home.html', context)
 
 def archive(request):
     context = {
-        'tasks': Task.objects.filter(is_archived=True)
+        'tasks': Task.objects.filter(is_archived=False),
+        'archives': Task.objects.filter(is_archived=True),
     }
     return render(request, 'todolist_app/archive.html', context)
 
