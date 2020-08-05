@@ -28,6 +28,7 @@ def deleteTask(request, task_id):
     last_url = request.POST.get('last_url')
     task = Task.objects.filter(id=task_id).first()
     task.delete()
+    messages.success(request, f'A task has been deleted')
     return redirect(last_url)
 
 def archiveTask(request, task_id):
